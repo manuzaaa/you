@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TP-GIT</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 5rem auto;
+      padding: 3rem 2.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+      font-weight: 600;
+      color: #363636;
+    }
+
+    .button.is-primary {
+      background-color: #6e5944;
+      border: none;
+    }
+
+    .button.is-primary:hover {
+      background-color: #5c4b3a;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section">
+    <div class="form-container">
+
+      <h2 class="title is-3 has-text-centered">Formulaire d'information</h2>
+
+      <form method="post" action="">
+
+        <div class="field">
+          <label class="label" for="nom">Nom</label>
+          <div class="control">
+            <input class="input" type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="prenom">Prénom</label>
+          <div class="control">
+            <input class="input" type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Sexe</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="sexe" value="homme" required>
+              Homme
+            </label>
+            <label class="radio">
+              <input type="radio" name="sexe" value="femme" required>
+              Femme
+            </label>
+            <label class="radio">
+              <input type="radio" name="sexe" value="autre" required>
+              Autre
+            </label>
+          </div>
+        </div>
+
+        <div class="field mt-5">
+          <div class="control">
+            <button class="button is-transparent is-fullwidth">Envoyer</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+</body>
+</html>
