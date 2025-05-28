@@ -6,31 +6,70 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <style>
     body {
-      background: linear-gradient(to right, #ece9e6, #ffffff);
+      background: radial-gradient(ellipse at top left, #f5f5f5, #eaeaea);
       font-family: 'Segoe UI', sans-serif;
     }
 
     .form-container {
-      max-width: 500px;
+      max-width: 600px;
       margin: 5rem auto;
-      padding: 3rem 2.5rem;
+      padding: 3rem;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
     }
 
     .title {
-      font-weight: 600;
-      color: #363636;
+      font-weight: 700;
+      color: #3b3b3b;
     }
 
-    .button.is-primary {
+    .field {
+      margin-bottom: 1.75rem;
+    }
+
+    .input,
+    .textarea {
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .input:focus,
+    .textarea:focus {
+      border-color: #6e5944 !important;
+      box-shadow: 0 0 0 2px rgba(110, 89, 68, 0.25);
+    }
+
+    .button.is-luxury {
       background-color: #6e5944;
-      border: none;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(110, 89, 68, 0.25);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .button.is-primary:hover {
-      background-color: #5c4b3a;
+    .button.is-luxury:hover {
+      background-color: #5a4a38;
+      box-shadow: 0 15px 30px rgba(90, 74, 56, 0.4);
+    }
+
+    .radio + .radio {
+      margin-left: 1rem;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
     }
   </style>
 </head>
@@ -39,21 +78,27 @@
   <section class="section">
     <div class="form-container">
 
-      <h2 class="title is-3 has-text-centered">Formulaire d'information</h2>
+      <h2 class="title is-3 has-text-centered mb-5">📝 Formulaire d'information</h2>
 
       <form method="post" action="">
 
         <div class="field">
           <label class="label" for="nom">Nom</label>
-          <div class="control">
-            <input class="input" type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+          <div class="control has-icons-left">
+            <input class="input" type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
           </div>
         </div>
 
         <div class="field">
           <label class="label" for="prenom">Prénom</label>
-          <div class="control">
-            <input class="input" type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+          <div class="control has-icons-left">
+            <input class="input" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user-tag"></i>
+            </span>
           </div>
         </div>
 
@@ -65,26 +110,32 @@
               Homme
             </label>
             <label class="radio">
-              <input type="radio" name="sexe" value="femme" required>
+              <input type="radio" name="sexe" value="femme">
               Femme
             </label>
             <label class="radio">
-              <input type="radio" name="sexe" value="autre" required>
+              <input type="radio" name="sexe" value="autre">
               Autre
             </label>
           </div>
         </div>
 
-        <div class="field mt-5">
+        <div class="field mt-6">
           <div class="control">
-            <button class="button is-transparent is-fullwidth">Envoyer</button>
+            <button class="button is-luxury is-fullwidth is-medium">✨ Envoyer</button>
           </div>
         </div>
 
       </form>
 
+      <div class="footer">
+        &copy; 2025 – Formulaire professionnel signé toi.
+      </div>
     </div>
   </section>
+
+  <!-- FontAwesome (for icons) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
